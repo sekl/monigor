@@ -1,0 +1,10 @@
+[
+    {
+        "url": "http://www.sebastianklier.com",
+        "xpath": ".author_job"
+    },
+    {
+        "url": "https://www.sebastianklier.com",
+        "xpath": ".author_bio"
+    }
+]
