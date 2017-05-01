@@ -18,9 +18,9 @@ type Config struct {
 }
 
 type Site struct {
-	URL   string `json:"url"`
-	XPath string `json:"xpath"`
-	Text  string `json:"text"`
+	URL     string `json:"url"`
+	Element string `json:"element"`
+	Text    string `json:"text"`
 }
 
 type Payload struct {
@@ -64,11 +64,11 @@ func scanSite(site Site) {
 		return
 	}
 
-	doc.Find(site.XPath).Each(func(i int, s *goquery.Selection) {
+	doc.Find(site.Element).Each(func(i int, s *goquery.Selection) {
 		result := s.Text()
 
 		if len(result) == 0 {
-			fmt.Printf("No result for %s at %s", site.XPath, site.URL)
+			fmt.Printf("No result for %s at %s", site.Element, site.URL)
 			return
 		}
 		fmt.Printf("Found: %s\n", result)
